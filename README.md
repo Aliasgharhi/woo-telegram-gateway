@@ -79,24 +79,6 @@ Go To WordPress Dashboard → Plugins → Add New → Upload Plugin and choose t
 
 If you appreciate this plugin and would like to support ongoing development, you can send Telegram Stars to **@Aliasgharhi** on Telegram. Your donations help maintain the plugin and add new features.
 
-## GitHub Repository Setup
-
-When publishing to GitHub, make sure to include:
-
-1. **LICENSE file**: Add a LICENSE file with the GPL-2.0 license text from [GNU.org](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
-2. **`.gitignore` file**: Create a .gitignore with:
-   ```
-   .DS_Store
-   node_modules/
-   npm-debug.log
-   yarn-error.log
-   vendor/
-   *.log
-   .idea/
-   .vscode/
-   ```
-3. **Repository description**: Use a clear description and relevant topics (woocommerce, telegram, payment-gateway)
-4. **Release tags**: Create proper version tags for each release
 
 ## License
 
