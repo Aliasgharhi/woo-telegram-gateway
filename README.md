@@ -39,8 +39,7 @@ A powerful WooCommerce payment gateway that seamlessly integrates Telegram Stars
 
 ## Installation
 
-Download latest Release:
-@https://github.com/Aliasgharhi/woo-telegram-gateway
+Download [latest Release](https://github.com/Aliasgharhi/woo-telegram-gateway/releases/latest)
 
 Go To WordPress Dashboard → Plugins → Add New → Upload Plugin and choose the plugin and upload it
 
