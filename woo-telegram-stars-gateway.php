@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Telegram Stars Gateway
  * Plugin URI: https://github.com/Aliasgharhi/woo-telegram-gateway
  * Description: Accept Telegram Stars payments in your WooCommerce store
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Aliasgharhi
  * Author URI: https://github.com/Aliasgharhi/
  * Text Domain: woo-telegram-stars-gateway
@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('WTSG_VERSION', '1.0.5');
+define('WTSG_VERSION', '1.0.6');
 define('WTSG_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WTSG_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WTSG_PLUGIN_BASENAME', plugin_basename(__FILE__));

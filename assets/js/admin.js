@@ -69,38 +69,4 @@ jQuery(document).ready(function($) {
         // Remove the remove button
         button.remove();
     });
-
-    // Handle set webhook button
-    $(document).on('click', '.wtsg-set-webhook', function(e) {
-        e.preventDefault();
-        const $button = $(this);
-        const $result = $button.siblings('.wtsg-test-result');
-        const action = $button.data('action');
-        const nonce = $button.data('nonce');
-
-        $button.prop('disabled', true);
-        $result.html('<p>' + wtsgAdmin.testing + '</p>');
-
-        $.ajax({
-            url: wtsgAdmin.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'wtsg_' + action,
-                nonce: nonce
-            },
-            success: function(response) {
-                if (response.success) {
-                    $result.html('<div class="notice notice-success inline"><p>' + response.data.message + '</p></div>');
-                } else {
-                    $result.html('<div class="notice notice-error inline"><p>' + wtsgAdmin.error + ' ' + response.data.message + '</p></div>');
-                }
-            },
-            error: function(xhr, status, error) {
-                $result.html('<div class="notice notice-error inline"><p>' + wtsgAdmin.error + ' ' + error + '</p></div>');
-            },
-            complete: function() {
-                $button.prop('disabled', false);
-            }
-        });
-    });
 }); 

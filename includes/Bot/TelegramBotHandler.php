@@ -52,11 +52,6 @@ class TelegramBotHandler {
                 ));
             }
             
-            // Register webhook only if we're in the admin area or during a webhook request
-            if (is_admin() || (defined('DOING_AJAX') && DOING_AJAX) || $this->is_webhook_request()) {
-                add_action('init', array($this, 'register_webhook'));
-            }
-
             // Only add webhook handler if we're not in admin
             if (!$this->is_admin_request()) {
                 add_action('woocommerce_api_telegram_stars_gateway', array($this, 'handle_webhook'));
@@ -221,6 +216,8 @@ class TelegramBotHandler {
                     echo '<div class="error"><p>Telegram Stars Gateway Webhook Error: ' . esc_html($e->getMessage()) . '</p></div>';
                 });
             }
+            // Re-throw the exception so it can be caught by the AJAX handler
+            throw $e;
         }
     }
 

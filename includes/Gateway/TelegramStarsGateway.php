@@ -181,8 +181,8 @@ class TelegramStarsGateway extends WC_Payment_Gateway {
         
         // Create the instructions HTML
         $instructions = '<div class="webhook-instructions" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; margin-bottom: 15px;">';
-        $instructions .= '<p><strong>' . esc_html__('WebHook Set', 'woo-telegram-stars-gateway') . '</strong></p>';
-        $instructions .= '<p>' . esc_html__('You need manually set telegram webhook (Connection between Telegram and WooCommerce). For doing this, open this link:', 'woo-telegram-stars-gateway') . '</p>';
+        $instructions .= '<p><strong>' . esc_html__('WebHook Setup', 'woo-telegram-stars-gateway') . '</strong></p>';
+        $instructions .= '<p>' . esc_html__('To connect Telegram with WooCommerce, open this link in your browser:', 'woo-telegram-stars-gateway') . '</p>';
         $instructions .= '<p><code style="display: block; padding: 10px; background: #fff; border: 1px solid #ddd; word-break: break-all;">' . esc_url($webhook_url) . '</code></p>';
         
         if (empty($token)) {
@@ -351,12 +351,11 @@ class TelegramStarsGateway extends WC_Payment_Gateway {
         );
 
         wp_localize_script('wtsg-admin', 'wtsgAdmin', array(
-            'ajaxurl' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('wtsg_admin_nonce'),
-            'testing' => __('Testing...', 'woo-telegram-stars-gateway'),
-            'success' => __('Success!', 'woo-telegram-stars-gateway'),
-            'error' => __('Error:', 'woo-telegram-stars-gateway'),
-            'viewLogsUrl' => admin_url('admin.php?page=wc-settings&tab=checkout&section=telegram_stars&action=view_logs&_wpnonce=' . wp_create_nonce('view_telegram_logs')),
+            'title' => __('Select Image', 'woo-telegram-stars-gateway'),
+            'button' => __('Use this image', 'woo-telegram-stars-gateway'),
+            'change' => __('Change Image', 'woo-telegram-stars-gateway'),
+            'remove' => __('Remove Image', 'woo-telegram-stars-gateway'),
+            'upload' => __('Upload Image', 'woo-telegram-stars-gateway'),
         ));
     }
 } 
